@@ -29,7 +29,8 @@ public class GraphicsMain {
             System.out.println();
         }
 
-        Screen sc = new Screen();
+        // Screen sc = new Screen();
+        GUIComponents gui = new GUIComponents();
 
     }
 

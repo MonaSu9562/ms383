@@ -1,13 +1,14 @@
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class GUIComponents extends JFrame {
-    private JPanel p;
+    // private JPanel p;
+    private Screen screen;
 
     public GUIComponents() {
-        this.p = new JPanel();
+        this.screen = new Screen();
+        // this.p = new JPanel();
         // initialise this JFrame
-        this.setSize(600, 300);
+        this.setSize(600, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -15,7 +16,8 @@ public class GUIComponents extends JFrame {
     }
 
     public void setup() {
+        getContentPane().add(screen);
         // add JPanel into this JFrame
-        getContentPane().add(p);
+        // getContentPane().add(p);
     }
 }
