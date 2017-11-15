@@ -24,16 +24,22 @@
  *
  */
 public class MandelbrotCalculator {
+    int xResolution;
+    int yResolution;
+    double minReal;
+    double maxReal;
+    double minImaginary;
+    double maxImaginary;
+    int maxIterations;
+    double radiusSquared;
 
-    // Initial parameter values
-    protected static final double INITIAL_MIN_REAL = -2.0;
-    protected static final double INITIAL_MAX_REAL = 0.7;
-    protected static final double INITIAL_MIN_IMAGINARY = -1.25;
-    protected static final double INITIAL_MAX_IMAGINARY = 1.25;
-    protected static final int INITIAL_MAX_ITERATIONS = 50;
+    // int xResolution, int yResolution, double minReal, double maxReal,
+    // double minImaginary, double maxImaginary, int maxIterations, double
+    // radiusSquared
 
-    // Default parameter values
-    protected static final double DEFAULT_RADIUS_SQUARED = 4.0;
+    public MandelbrotCalculator() {
+
+    }
 
     /**
      * Method which calculates the number of iterations over which Z_n+1 = Z_n^2
@@ -118,8 +124,7 @@ public class MandelbrotCalculator {
      *         needed until Z escaped the bounding radius, or maxIterations
      *         otherwise.
      */
-    public int[][] calcMandelbrotSet(int xResolution, int yResolution, double minReal, double maxReal,
-            double minImaginary, double maxImaginary, int maxIterations, double radiusSquared) {
+    public int[][] calcMandelbrotSet() {
         int[][] mandelbrotData = new int[yResolution][xResolution];
         double realRange = maxReal - minReal;
 
@@ -135,5 +140,11 @@ public class MandelbrotCalculator {
             }
         }
         return mandelbrotData;
+    }
+
+    public MandelbrotSet geneMandelbrotSet() {
+        MandelbrotSet ms = new MandelbrotSet(xResolution, yResolution, minReal, maxReal, minImaginary, maxImaginary,
+                maxIterations, radiusSquared, dataSet);
+        return ms;
     }
 }

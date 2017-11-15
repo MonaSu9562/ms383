@@ -24,4 +24,14 @@ public abstract class Configuration {
      * This is the scale. Decide the size of the figure.
      */
     public static final float SCALE = 250;
+
+    // Initial parameter values
+    protected static final double INITIAL_MIN_REAL = -2.0;
+    protected static final double INITIAL_MAX_REAL = 0.7;
+    protected static final double INITIAL_MIN_IMAGINARY = -1.25;
+    protected static final double INITIAL_MAX_IMAGINARY = 1.25;
+    protected static final int INITIAL_MAX_ITERATIONS = 50;
+
+    // Default parameter values
+    protected static final double DEFAULT_RADIUS_SQUARED = 4.0;
 }
